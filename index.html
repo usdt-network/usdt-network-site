@@ -1,70 +1,45 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>USDT-Network Protocol | Official Site</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #1a1a1a; max-width: 900px; margin: 0 auto; padding: 0; background: #f9f9f9; }
-        header { background: #002d5b; color: #ffffff; padding: 60px 20px; text-align: center; border-bottom: 5px solid #26a17b; }
-        .logo-n { font-size: 64px; font-weight: bold; color: #26a17b; margin-bottom: 10px; }
+        body { font-family: sans-serif; line-height: 1.6; color: #1a1a1a; max-width: 900px; margin: 0 auto; padding: 0; background: #f9f9f9; }
+        header { background: #002d5b; color: #ffffff; padding: 40px 20px; text-align: center; border-bottom: 5px solid #26a17b; }
+        
+        /* This displays your logo */
+        .logo-img { width: 120px; height: auto; margin-bottom: 15px; border-radius: 50%; border: 3px solid #26a17b; }
+        
         .container { padding: 40px 20px; }
         section { background: white; padding: 30px; margin-bottom: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
-        h1 { margin: 0; font-size: 2.5rem; }
-        h2 { color: #002d5b; border-left: 5px solid #26a17b; padding-left: 15px; margin-bottom: 20px; }
-        .specs { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .spec-item { background: #f0f4f8; padding: 15px; border-radius: 8px; text-align: center; }
-        .spec-item strong { display: block; color: #26a17b; font-size: 1.2rem; }
-        .btn { display: inline-block; background: #26a17b; color: white; padding: 15px 30px; text-decoration: none; border-radius: 30px; font-weight: bold; transition: background 0.3s; margin-top: 20px; }
-        .btn:hover { background: #1e8565; }
-        .footer { text-align: center; padding: 40px; color: #777; font-size: 0.9rem; }
+        h1 { margin: 0; font-size: 2.2rem; }
+        .social-links { margin-top: 20px; }
+        .btn { display: inline-block; background: #26a17b; color: white; padding: 12px 25px; text-decoration: none; border-radius: 30px; font-weight: bold; margin: 5px; }
+        .btn-telegram { background: #0088cc; }
+        .btn-twitter { background: #1da1f2; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo-n">N</div>
+    <!-- We are using 'logo.png' - change this if your file has a different name -->
+    <img src="logo.png" alt="USDT-Network Logo" class="logo-img">
     <h1>USDT-Network</h1>
     <p>The Secondary Network Layer for Distributed BEP-20 Transparency</p>
-    <a href="Whitepaper.pdf" class="btn" target="_blank">Download Whitepaper (PDF)</a>
+    
+    <div class="social-links">
+        <a href="#" class="btn btn-telegram">Telegram (Coming Soon)</a>
+        <a href="#" class="btn btn-twitter">Twitter (Coming Soon)</a>
+    </div>
 </header>
 
 <div class="container">
     <section>
         <h2>Project Overview</h2>
-        <p>The <strong>USDT-Network</strong> protocol (Signature N) is designed as a specialized infrastructure layer on the BNB Smart Chain. Our framework focuses on enhancing the transparency of tokenized liquid assets through a unique "Signature N" verification process, ensuring that network-level transactions maintain the highest standards of integrity and security.</p>
+        <p>The <strong>USDT-Network</strong> protocol (Signature N) is a specialized transparency layer for the BNB Smart Chain, providing real-time verification and ecosystem stability.</p>
+        <a href="#" class="btn">Download Whitepaper (PDF)</a>
     </section>
-
-    <section>
-        <h2>Token Specifications</h2>
-        <div class="specs">
-            <div class="spec-item"><strong>Name</strong> USDT-Network</div>
-            <div class="spec-item"><strong>Symbol</strong> USDT</div>
-            <div class="spec-item"><strong>Network</strong> BEP-20 (BSC)</div>
-            <div class="spec-item"><strong>Total Supply</strong> 100,000</div>
-        </div>
-        <p style="margin-top: 20px; word-break: break-all;"><strong>Contract:</strong> 0x[PASTE_YOUR_ADDRESS_HERE_LATER]</p>
-    </section>
-
-    <section>
-        <h2>Development Roadmap</h2>
-        <ul>
-            <li><strong>Q1 2025:</strong> Protocol deployment and Contract Security Audit.</li>
-            <li><strong>Q2 2025:</strong> Integration of the "Signature N" Network Layer.</li>
-            <li><strong>Q3 2025:</strong> Liquidity Routing optimization and Node ecosystem testing.</li>
-            <li><strong>Q4 2025:</strong> Full decentralized governance and cross-chain expansion.</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>Official Social Channels</h2>
-        <p>Stay updated with our latest developments via our official Telegram and GitHub repositories.</p>
-        <p>Join us: <a href="YOUR_TELEGRAM_LINK" style="color: #26a17b; font-weight: bold;">Official Telegram</a></p>
-    </section>
-</div>
-
-<div class="footer">
-    &copy; 2025 USDT-Network Protocol Group. Built for the BNB Smart Chain ecosystem.
 </div>
 
 </body>
