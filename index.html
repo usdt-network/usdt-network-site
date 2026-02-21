@@ -3,160 +3,174 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USDT-Network | The Signature N Protocol</title>
-    <!-- Modern Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>USDT-Network | Secure Transparency Layer</title>
     <style>
-        :root {
-            --primary: #26a17b; /* USDT Green */
-            --primary-light: #35c697;
-            --dark-bg: #0a0e12;
-            --card-bg: #161b22;
-            --text-main: #ffffff;
-            --text-dim: #8b949e;
+        :root { 
+            --primary: #26a17b; 
+            --primary-glow: #2ce0aa;
+            --dark-bg: #001a33; 
+            --card-bg: #ffffff;
+            --text-main: #2c3e50;
+        }
+        
+        body { 
+            font-family: 'Inter', -apple-system, sans-serif; 
+            line-height: 1.7; 
+            color: var(--text-main); 
+            margin: 0; 
+            background: #f0f4f7; 
         }
 
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-main);
-            margin: 0;
-            line-height: 1.6;
+        /* Catchy Header with Gradient */
+        header { 
+            background: linear-gradient(135deg, #001a33 0%, #003366 100%);
+            color: white; 
+            padding: 80px 20px; 
+            text-align: center; 
+            border-bottom: 6px solid var(--primary);
+            position: relative;
+            overflow: hidden;
         }
 
-        /* Hero Section */
-        header {
-            padding: 80px 20px;
-            text-align: center;
-            background: radial-gradient(circle at top, #1a2a24 0%, #0a0e12 100%);
-            border-bottom: 1px solid #30363d;
-        }
-
-        /* Logo Styling */
-        .logo-container {
-            margin-bottom: 25px;
-        }
-        .logo-img {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            border: 3px solid var(--primary);
-            padding: 5px;
-            background: #ffffff10;
-            box-shadow: 0 0 30px rgba(38, 161, 123, 0.3);
+        /* The Logo Styling */
+        .logo-img { 
+            width: 160px; height: 160px; 
+            border-radius: 50%; 
+            border: 5px solid var(--primary); 
+            background: white; 
+            margin-bottom: 25px; 
+            object-fit: cover;
+            box-shadow: 0 0 25px rgba(38, 161, 123, 0.4);
             transition: transform 0.3s ease;
         }
-        .logo-img:hover { transform: scale(1.05); }
+        .logo-img:hover { transform: scale(1.05) rotate(2deg); }
 
-        .hero-title { font-size: 3.5rem; font-weight: 800; margin: 0; background: linear-gradient(to right, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-tagline { font-size: 1.2rem; color: var(--text-dim); max-width: 700px; margin: 15px auto 30px; }
+        .hero-title { font-size: 3.5rem; margin: 0; letter-spacing: -1px; font-weight: 800; }
+        .hero-subtitle { font-size: 1.3rem; color: #88a9c3; max-width: 700px; margin: 15px auto 40px; }
 
-        /* Buttons */
-        .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
-        .btn { padding: 12px 28px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: var(--primary-light); box-shadow: 0 0 15px rgba(38, 161, 123, 0.4); }
-        .btn-outline { border: 1px solid #30363d; color: white; background: transparent; }
-        .btn-outline:hover { background: #30363d; }
+        /* Charismatic Buttons */
+        .social-buttons { margin-bottom: 20px; }
+        .btn { 
+            display: inline-block; padding: 14px 35px; border-radius: 50px; 
+            text-decoration: none; font-weight: 700; transition: all 0.3s; 
+            margin: 8px; text-transform: uppercase; letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .btn-tg { background: #0088cc; color: white; }
+        .btn-tw { background: #000000; color: white; border: 1px solid #333; }
+        .btn-wp { background: var(--primary); color: white; }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.3); opacity: 0.9; }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
+        .container { max-width: 1100px; margin: -50px auto 50px; padding: 0 20px; position: relative; z-index: 10; }
 
-        /* Feature Grid */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
-        .card { background: var(--card-bg); padding: 35px; border-radius: 16px; border: 1px solid #30363d; transition: 0.3s; }
-        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
-        .card h3 { color: var(--primary); margin-top: 0; font-size: 1.4rem; }
-        .card p { color: var(--text-dim); font-size: 0.95rem; }
+        /* Professional Cards */
+        .card { 
+            background: var(--card-bg); 
+            padding: 50px; 
+            border-radius: 20px; 
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08); 
+            margin-bottom: 30px; 
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        
+        h2 { 
+            color: var(--dark-bg); 
+            font-size: 2rem;
+            margin-top: 0;
+            display: flex;
+            align-items: center;
+        }
+        h2::before {
+            content: "";
+            width: 8px; height: 35px;
+            background: var(--primary);
+            margin-right: 15px;
+            border-radius: 4px;
+        }
 
-        /* Tokenomics Section */
-        .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
-        .stat-box { background: #0d1117; padding: 20px; border-radius: 12px; border-left: 4px solid var(--primary); }
-        .stat-label { font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; }
-        .stat-value { font-size: 1.2rem; font-weight: 700; color: white; display: block; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin-top: 30px; }
+        .stat-item { 
+            background: #f8fbff; padding: 25px; border-radius: 15px; 
+            text-align: center; border: 1px solid #e1e9f0;
+            transition: 0.3s;
+        }
+        .stat-item:hover { background: white; border-color: var(--primary); }
+        .stat-item span { display: block; font-size: 0.85rem; color: #7f8c8d; text-transform: uppercase; font-weight: 600; }
+        .stat-item strong { font-size: 1.4rem; color: var(--dark-bg); display: block; margin-top: 5px; }
 
-        /* Roadmap Section */
-        .roadmap-item { border-left: 2px solid #30363d; padding-left: 30px; position: relative; margin-bottom: 40px; }
-        .roadmap-item::before { content: ''; width: 12px; height: 12px; background: var(--primary); border-radius: 50%; position: absolute; left: -7px; top: 5px; }
-        .phase-tag { color: var(--primary); font-weight: bold; font-size: 0.8rem; letter-spacing: 1px; }
+        /* New Professional Sections */
+        .feature-list { list-style: none; padding: 0; }
+        .feature-list li { 
+            padding: 15px 0; border-bottom: 1px solid #eee; 
+            display: flex; align-items: flex-start;
+        }
+        .feature-list li strong { color: var(--primary); margin-right: 10px; min-width: 140px; }
 
-        footer { text-align: center; padding: 60px 20px; border-top: 1px solid #30363d; color: var(--text-dim); font-size: 0.85rem; }
+        footer { text-align: center; padding: 60px; color: #95a5a6; font-size: 0.9rem; }
     </style>
 </head>
 <body>
 
 <header>
-    <div class="logo-container">
-        <!-- *** UPDATE THE FILENAME BELOW IF IT ENDS IN .jpg INSTEAD OF .png *** -->
-        <img src="usdtnetwork-logo.png" alt="USDT-Network" class="logo-img">
-    </div>
+    <!-- Logo Name Check: usdtnetwork-logo.png -->
+    <img src="usdtnetwork-logo.png" alt="USDT-Network Protocol" class="logo-img">
     <h1 class="hero-title">USDT-NETWORK</h1>
-    <p class="hero-tagline">Establishing the Next-Generation Transparency Layer (Signature N) for the Binance Smart Chain Ecosystem.</p>
+    <p class="hero-subtitle">The Advanced Secondary Infrastructure for Distributed BEP-20 Transparency and Transactional Integrity.</p>
     
-    <div class="btn-group">
-        <a href="https://t.me/YOUR_TELEGRAM" class="btn btn-primary">Join Telegram</a>
-        <a href="https://twitter.com/YOUR_TWITTER" class="btn btn-outline">Follow Twitter</a>
-        <a href="#" class="btn btn-outline">Whitepaper PDF</a>
+    <div class="social-buttons">
+        <a href="https://t.me/YourChannel" class="btn btn-tg">Join Telegram</a>
+        <a href="https://x.com/YourProfile" class="btn btn-tw">Follow Twitter</a>
+        <a href="#" class="btn btn-wp">Technical Paper</a>
     </div>
 </header>
 
 <div class="container">
-    <!-- About Section -->
-    <section>
-        <div class="card" style="margin-bottom: 50px;">
-            <h3>Protocol Mission</h3>
-            <p>The USDT-Network Protocol is a specialized infrastructure designed to address the growing need for high-frequency transaction transparency on BEP-20. By utilizing our proprietary <strong>Signature N</strong> verification system, we provide users with a secondary security layer that monitors USDT flow with institutional precision.</p>
+    <!-- Protocol Mission -->
+    <section class="card">
+        <h2>Protocol Mission</h2>
+        <p>The USDT-Network (Signature N) serves as a specialized consensus-monitoring layer. We bridge the gap between complex blockchain data and institutional-grade clarity, providing users with a verifiable audit trail for every asset movement on the network.</p>
+    </section>
+
+    <!-- Professional Tokenomics -->
+    <section class="card">
+        <h2>System Specifications</h2>
+        <div class="grid">
+            <div class="stat-item"><span>Protocol Name</span><strong>USDT-Network</strong></div>
+            <div class="stat-item"><span>Digital Ticker</span><strong>USDT-N</strong></div>
+            <div class="stat-item"><span>Network Layer</span><strong>BNB Smart Chain</strong></div>
+            <div class="stat-item"><span>Max Distribution</span><strong>1,000,000,000</strong></div>
         </div>
     </section>
 
-    <!-- Detailed Features -->
-    <div class="grid">
-        <div class="card">
-            <h3>Distributed Transparency</h3>
-            <p>Real-time on-chain data visualization that bridges the gap between complex BSC smart contracts and standard retail interfaces.</p>
-        </div>
-        <div class="card">
-            <h3>Anti-Flash Mitigation</h3>
-            <p>Signature N protocols include algorithmic safeguards against flash-loan vulnerabilities within specific BEP-20 liquidity pools.</p>
-        </div>
-        <div class="card">
-            <h3>Automated Audit-Trail</h3>
-            <p>Every movement within the USDT-Network is logged into a decentralized audit trail, accessible via our upcoming Explorer 2.0.</p>
-        </div>
-    </div>
+    <!-- NEW CONTENT: Security & Utility -->
+    <section class="card">
+        <h2>Security Architecture</h2>
+        <ul class="feature-list">
+            <li><strong>Verification:</strong> Multi-sig confirmation for large-scale institutional volume.</li>
+            <li><strong>Transparency:</strong> Real-time public ledger synchronization with the BSC mainnet.</li>
+            <li><strong>Integrity:</strong> Hard-coded algorithmic constraints to prevent unauthorized minting.</li>
+        </ul>
+    </section>
 
-    <!-- Tokenomics & Roadmap Row -->
-    <div class="grid" style="margin-top: 50px;">
-        <div class="card">
-            <h3>Tokenomics</h3>
-            <div class="stats-grid">
-                <div class="stat-box"><span class="stat-label">Total Supply</span><span class="stat-value">1,000,000,000</span></div>
-                <div class="stat-box"><span class="stat-label">Network</span><span class="stat-value">BSC (BEP-20)</span></div>
-                <div class="stat-box"><span class="stat-label">Marketing Tax</span><span class="stat-value">3%</span></div>
-                <div class="stat-box"><span class="stat-label">Liquidity Pool</span><span class="stat-value">Burned</span></div>
-            </div>
-        </div>
+    <section class="card">
+        <h2>Institutional Utility</h2>
+        <p>Unlike standard tokens, the USDT-Network is designed for enterprise integration. Our protocol allows third-party developers to plug into our transparency API, enabling a more secure environment for high-frequency trading and retail payment gateways.</p>
+    </section>
 
-        <div class="card">
-            <h3>Strategic Roadmap</h3>
-            <div class="roadmap-item">
-                <span class="phase-tag">PHASE 1 (FOUNDATION)</span>
-                <p>Launch of Signature N core layer and community governance establishment.</p>
-            </div>
-            <div class="roadmap-item">
-                <span class="phase-tag">PHASE 2 (INTEGRATION)</span>
-                <p>Listing on major DEXs and initiation of the Cross-Chain USDT Bridge.</p>
-            </div>
-            <div class="roadmap-item" style="border: none;">
-                <span class="phase-tag">PHASE 3 (EXPANSION)</span>
-                <p>Deployment of the USDT-Network Mobile Wallet and Institution-grade API nodes.</p>
-            </div>
+    <!-- Roadmap -->
+    <section class="card">
+        <h2>Development Epochs</h2>
+        <div class="grid">
+            <div class="stat-item"><strong>Epoch 1</strong><span>Core Deployment & Smart Contract Audit</span></div>
+            <div class="stat-item"><strong>Epoch 2</strong><span>Transparency API & Dashboard Beta</span></div>
+            <div class="stat-item"><strong>Epoch 3</strong><span>Global Institutional Integration</span></div>
         </div>
-    </div>
+    </section>
 </div>
 
 <footer>
-    <p>&copy; 2024 USDT-NETWORK Protocol. Built on Binance Smart Chain.</p>
-    <p style="margin-top: 10px; font-size: 0.75rem;">Risk Disclosure: Cryptocurrency investments involve high risk. Always perform your own due diligence before participating.</p>
+    &copy; 2024 USDT-Network Protocol • Signature N Infrastructure<br>
+    Built for the future of decentralized transparency.
 </footer>
 
 </body>
