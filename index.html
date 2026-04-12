@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>USDT-Network | Protocol Overview</title>
-
+    <title>USDT-Network | Infrastructure Protocol</title>
+    <!-- Modern Font -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-
     <style>
         :root {
-            --primary: #5a7f1f;
+            --primary: #5a7f1f; /* Logo Olive Green */
             --primary-light: #7aa832;
             --dark-bg: #0b0f08;
             --card-bg: #151a12;
             --text-main: #ffffff;
             --text-dim: #9aa38f;
+            --warning-gold: #ffcc00;
         }
 
         body {
@@ -25,180 +25,173 @@
             line-height: 1.6;
         }
 
+        /* Institutional Alert Banner */
+        .alert-banner {
+            background: linear-gradient(90deg, #1a1f13, #2a3323);
+            color: var(--warning-gold);
+            padding: 12px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border-bottom: 1px solid #3d4a34;
+            letter-spacing: 0.5px;
+        }
+
+        /* Hero Section */
         header {
-            padding: 80px 20px;
+            padding: 60px 20px 80px;
             text-align: center;
             background: radial-gradient(circle at top, #1c2614 0%, #0b0f08 100%);
             border-bottom: 1px solid #2a3323;
         }
 
+        /* Logo Styling */
+        .logo-container {
+            margin-bottom: 25px;
+        }
         .logo-img {
-            width: 130px;
-            height: 130px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             border: 3px solid var(--primary);
             padding: 5px;
             background: #ffffff10;
-            box-shadow: 0 0 25px rgba(90, 127, 31, 0.3);
+            box-shadow: 0 0 30px rgba(90, 127, 31, 0.35);
+            transition: transform 0.3s ease;
+        }
+        .logo-img:hover { transform: scale(1.05); }
+
+        .hero-title { 
+            font-size: 3.5rem; 
+            font-weight: 800; 
+            margin: 0; 
+            background: linear-gradient(to right, #fff, var(--primary)); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            text-transform: uppercase;
+            letter-spacing: -1px;
         }
 
-        .hero-title {
-            font-size: 3rem;
-            font-weight: 800;
-            margin: 20px 0 10px;
-            background: linear-gradient(to right, #fff, var(--primary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .hero-tagline { 
+            font-size: 1.25rem; 
+            color: var(--text-dim); 
+            max-width: 800px; 
+            margin: 15px auto 30px; 
+            font-weight: 300;
         }
 
-        .hero-tagline {
-            font-size: 1.1rem;
-            color: var(--text-dim);
-            max-width: 700px;
-            margin: 10px auto 25px;
-        }
+        /* Buttons */
+        .btn-group { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .btn { padding: 14px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; font-size: 0.95rem; display: flex; align-items: center; gap: 8px; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-primary:hover { background: var(--primary-light); box-shadow: 0 0 20px rgba(90, 127, 31, 0.4); }
+        .btn-outline { border: 1px solid #2a3323; color: white; background: transparent; }
+        .btn-outline:hover { background: #2a3323; }
+        .btn-disabled { opacity: 0.5; cursor: not-allowed; border: 1px dashed #444; }
 
-        .notice-box {
-            margin: 20px auto;
-            max-width: 700px;
-            background: #1a1f15;
-            border: 1px solid #2a3323;
-            padding: 15px;
-            border-radius: 10px;
-            font-size: 0.85rem;
-            color: var(--text-dim);
-        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 60px 20px; }
 
-        .btn-group {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
+        /* Feature Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; margin-top: 40px; }
+        .card { background: var(--card-bg); padding: 35px; border-radius: 16px; border: 1px solid #2a3323; transition: 0.3s; }
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .card h3 { color: var(--primary); margin-top: 0; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 1px; }
+        .card p { color: var(--text-dim); font-size: 1rem; }
 
-        .btn {
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
+        /* Tokenomics Section */
+        .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .stat-box { background: #0e130a; padding: 20px; border-radius: 12px; border-left: 4px solid var(--primary); }
+        .stat-label { font-size: 0.8rem; color: var(--text-dim); text-transform: uppercase; font-weight: 600; }
+        .stat-value { font-size: 1.3rem; font-weight: 700; color: white; display: block; }
 
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
+        /* Roadmap Section */
+        .roadmap-item { border-left: 2px solid #2a3323; padding-left: 30px; position: relative; margin-bottom: 40px; }
+        .roadmap-item::before { content: ''; width: 12px; height: 12px; background: var(--primary); border-radius: 50%; position: absolute; left: -7px; top: 5px; }
+        .phase-tag { color: var(--primary); font-weight: bold; font-size: 0.8rem; letter-spacing: 1px; }
 
-        .btn-outline {
-            border: 1px solid #2a3323;
-            color: white;
-        }
-
-        .disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 14px;
-            border: 1px solid #2a3323;
-            margin-bottom: 25px;
-        }
-
-        .card h3 {
-            color: var(--primary);
-            margin-top: 0;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 50px 20px;
-            border-top: 1px solid #2a3323;
-            color: var(--text-dim);
-            font-size: 0.85rem;
-        }
+        footer { text-align: center; padding: 80px 20px; border-top: 1px solid #2a3323; color: var(--text-dim); font-size: 0.9rem; background: #070a05; }
+        .footer-disclaimer { max-width: 800px; margin: 0 auto; line-height: 1.8; }
     </style>
 </head>
-
 <body>
 
+<!-- Institutional Communication Bar -->
+<div class="alert-banner">
+    ⚠️ NETWORK NOTICE: Our official X (Twitter) account is currently undergoing verification recovery. All protocol operations and updates are strictly ongoing via <strong>Telegram</strong> and this <strong>Official Website</strong>. Please import the token manually using the verified contract address.
+</div>
+
 <header>
-    <img src="usdtnetwork-logo.png" alt="USDT-Network" class="logo-img">
-
-    <h1 class="hero-title">USDT-Network</h1>
-
-    <p class="hero-tagline">
-        A BEP20-based digital asset designed for participation in decentralized finance ecosystems on the BNB Smart Chain.
-    </p>
-
-    <!-- NOTICE ABOUT TWITTER -->
-    <div class="notice-box">
-        ⚠️ <strong>Notice:</strong> Our official X (Twitter) account is currently temporarily unavailable due to a platform-related issue. 
-        An appeal has been submitted and is under review. 
-        All official updates continue to be shared through our Telegram channel and this website.
+    <div class="logo-container">
+        <img src="usdtnetwork-logo.png" alt="USDT-Network Protocol" class="logo-img">
     </div>
-
+    <h1 class="hero-title">USDT-NETWORK</h1>
+    <p class="hero-tagline">Engineered Liquidity Routing & Secondary Infrastructure (Signature N) for the BNB Smart Chain Ecosystem.</p>
+    
     <div class="btn-group">
-        <a href="https://t.me/Protocol_USDT" class="btn btn-primary" target="_blank">Join Telegram</a>
-        <a class="btn btn-outline disabled">Twitter (Temporarily Unavailable)</a>
-        <a href="usdt-network.pdf" class="btn btn-outline" target="_blank">Whitepaper</a>
+        <a href="https://t.me/Protocol_USDT" class="btn btn-primary" target="_blank">Official Telegram</a>
+        <a href="#" class="btn btn-outline btn-disabled">X Portal (Under Verification)</a>
+        <a href="usdt-network.pdf" class="btn btn-outline" target="_blank">Institutional Whitepaper</a>
     </div>
 </header>
 
 <div class="container">
-
-    <div class="card">
-        <h3>Project Overview</h3>
-        <p>
-            USDT-Network is a BEP20 token deployed on the BNB Smart Chain. The project operates within decentralized exchange environments, allowing users to trade and interact with the token through automated market maker (AMM) liquidity pools.
-        </p>
-        <p>
-            All transactions are recorded on-chain and can be independently verified through public blockchain explorers, ensuring transparency and accessibility of data.
-        </p>
-    </div>
+    <section>
+        <div class="card" style="margin-bottom: 50px; border-left: 5px solid var(--primary);">
+            <h3>Protocol Mission</h3>
+            <p>The USDT-Network Protocol is a specialized infrastructure designed to optimize cross-chain transparency for BEP-20 assets. By utilizing our proprietary <strong>Signature N</strong> verification system, we provide an institutional-grade security layer that ensures high-integrity peer-to-peer asset transfers on the BNB Smart Chain.</p>
+        </div>
+    </section>
 
     <div class="grid">
         <div class="card">
-            <h3>Transparency</h3>
-            <p>All token activity is publicly verifiable through blockchain explorers, ensuring open access to transaction data.</p>
+            <h3>Institutional Transparency</h3>
+            <p>Advanced on-chain data visualization designed to bridge the gap between high-frequency BSC smart contracts and enterprise-level auditing interfaces.</p>
         </div>
-
         <div class="card">
-            <h3>DeFi Integration</h3>
-            <p>The token is designed for use within decentralized finance ecosystems including liquidity pools and trading platforms.</p>
+            <h3>Protocol Safeguards</h3>
+            <p>Signature N architecture includes algorithmic mitigation strategies to ensure network stability within specific BEP-20 liquidity routing pools.</p>
         </div>
-
         <div class="card">
-            <h3>Open Access</h3>
-            <p>Users can freely interact with the token via decentralized wallets and applications on BNB Smart Chain.</p>
+            <h3>Decentralized Integrity</h3>
+            <p>A fully immutable and open-source audit trail ensuring every transaction within the USDT-Network remains transparent and verifiable by the community.</p>
         </div>
     </div>
 
+    <div class="grid" style="margin-top: 50px;">
+        <div class="card">
+            <h3>System Architecture</h3>
+            <div class="stats-grid">
+                <div class="stat-box"><span class="stat-label">Total Supply</span><span class="stat-value">100,000</span></div>
+                <div class="stat-box"><span class="stat-label">Asset Ticker</span><span class="stat-value">USDT</span></div>
+                <div class="stat-box"><span class="stat-label">Logic Layer</span><span class="stat-value">Signature N</span></div>
+                <div class="stat-box"><span class="stat-label">Security</span><span class="stat-value">Open Source</span></div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Strategic Roadmap 2024-2025</h3>
+            <div class="roadmap-item">
+                <span class="phase-tag">PHASE 1 (FOUNDATION)</span>
+                <p>Deployment of the Signature N core layer and established community governance protocols.</p>
+            </div>
+            <div class="roadmap-item">
+                <span class="phase-tag">PHASE 2 (LIQUIDITY)</span>
+                <p>Initiation of specialized DEX liquidity routing and the launch of the Cross-Chain verification bridge.</p>
+            </div>
+            <div class="roadmap-item" style="border: none;">
+                <span class="phase-tag">PHASE 3 (SCALE)</span>
+                <p>Global deployment of the USDT-Network node infrastructure and institutional API integration.</p>
+            </div>
+        </div>
+    </div>
 </div>
 
 <footer>
-    <p>
-        USDT-Network is an independent project and is not affiliated with or endorsed by [Tether](chatgpt://generic-entity?number=0).
-    </p>
-
-    <p style="margin-top:10px;">
-        Cryptocurrency investments involve risk. Users should conduct independent research before participating.
-    </p>
+    <div class="footer-disclaimer">
+        <div style="font-size: 2.5rem; margin-bottom: 20px;">⚠️</div>
+        <p><strong>Legal Disclaimer:</strong> USDT-Network is an independent decentralized protocol. We are not affiliated with, endorsed by, or associated with Tether Operations Limited or the Tether (USDT) stablecoin.</p>
+        <p style="margin-top: 20px; font-size: 0.8rem; color: #666;">Digital assets involve significant risk. USDT-Network is a utility-focused protocol. Please conduct comprehensive due diligence before participating in the ecosystem.</p>
+    </div>
 </footer>
 
 </body>
